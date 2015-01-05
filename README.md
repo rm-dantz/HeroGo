@@ -1,4 +1,0 @@
-HeroGo
-======
-
-Hero is going
