@@ -231,7 +231,7 @@ obj/
 /*.csproj
 *.pidb
 *.suo
-/*.sln
+*.sln
 *.user
 *.unityproj
 *.booproj
@@ -246,3 +246,8 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+CurrentLayout.dwlt
+*.dll
+*.mdb
