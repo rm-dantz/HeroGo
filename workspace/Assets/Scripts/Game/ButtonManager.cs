@@ -4,6 +4,7 @@ using System.Collections;
 public class ButtonManager : MonoBehaviour 
 {
 	public player_control m_objPlayer;	
+	public Enemy_Creator m_enemy_cr;
 	void Awake() {
 	
 	}
@@ -18,8 +19,8 @@ public class ButtonManager : MonoBehaviour
 		m_objPlayer.Jump ();
 	}
 
-	public void ClickShoot()
+	public void ClickRegen()
 	{
-		m_objPlayer.shoot ();
+		m_enemy_cr.Regen ();
 	}
 }

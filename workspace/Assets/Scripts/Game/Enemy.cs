@@ -2,8 +2,17 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-	float speed = 1;
+	//Monster Abillity
+	public float speed = 1;
+	public int Type = 0;
+	public int element = 0;
+	public int HP = 10;
+	public int Damage = 1;
+	public int Level = 1;
+
+	//Destroy Distance
 	float maxiamDistance; 
+
 	void Awake() 
 	{
 		maxiamDistance = gameObject.transform.position.x - 15;
@@ -16,7 +25,30 @@ public class Enemy : MonoBehaviour {
 		gameObject.transform.Translate(Vector3.left * move, Space.World);
 		if (gameObject.transform.position.x < maxiamDistance) 
 		{
-			Destroy(gameObject);
+			Destroy(this.gameObject);
 		}
 	}
+	
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.gameObject.tag == "Player") 
+		{
+			Destroy (this.gameObject);
+		} 
+		else if (coll.gameObject.tag == "Bullet") 
+		{
+			//coll.SendMessage("ApplyDamage", 5.0F, SendMessageOptions.DontRequireReceiver);
+			int bulletPower = coll.gameObject.GetComponent<Bullet> ().player_damage;
+			Destroy (coll.gameObject);
+			HP -= bulletPower;
+			Debug.Log(bulletPower);
+			if (HP <= 0)
+				Destroy (this.gameObject);
+
+		}
+	}
+	
+
+	
 }
