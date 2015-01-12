@@ -4,7 +4,7 @@ using System.Collections;
 public class ButtonManager : MonoBehaviour 
 {
 	public player_control m_objPlayer;	
-	void Start () {
+	void Awake() {
 	
 	}
 	
@@ -16,5 +16,10 @@ public class ButtonManager : MonoBehaviour
 	public void OnClickStart ()
 	{
 		m_objPlayer.Jump ();
+	}
+
+	public void ClickShoot()
+	{
+		m_objPlayer.shoot ();
 	}
 }
