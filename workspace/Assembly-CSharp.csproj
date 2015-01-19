@@ -184,6 +184,8 @@
      <Compile Include="Assets\Scripts\Game\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Game\Enemy.cs" />
      <Compile Include="Assets\Scripts\Game\Enemy_Creator.cs" />
+     <Compile Include="Assets\Scripts\Game\ItemInterface.cs" />
+     <Compile Include="Assets\Scripts\Game\TimeCounting.cs" />
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.3.txt" />

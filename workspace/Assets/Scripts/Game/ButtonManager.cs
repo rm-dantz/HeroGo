@@ -10,11 +10,11 @@ public class ButtonManager : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 
 	}
 
-	public void OnClickStart ()
+	public void OnClickStart()
 	{
 		m_objPlayer.Jump ();
 	}

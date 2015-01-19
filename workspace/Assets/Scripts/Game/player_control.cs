@@ -2,13 +2,14 @@
 using  System . Collections ;
 
 public  class  player_control  :  MonoBehaviour  {
+	//Character Animation
     protected  Animator animator ;
 	private  bool bJump =  false ;
 	private float y = 0.0f;
 	private float gravity = 10.0f;   
 	private float deltaTime = 0.0f;
 	private int direction = 0;       // 0:stop, 1:jump, 2:down
-	// Setting
+	//Character Setting
 	private const float jump_speed = 0.2f;  
 	private const float jump_accell = 0.01f; 
 	private const float y_base = -1.5f;     
@@ -27,14 +28,16 @@ public  class  player_control  :  MonoBehaviour  {
 	public float Defence = 0.0f;
 	public float Jump_height = 1.0f;
 
-
-    void  Awake()  {
+    void  Awake()  
+	{
         animator =  GetComponentInChildren < Animator > ();
 		bJump =  false ;
 		y = y_base;
 		Jump_count = 0;
+		m_bulletObj.GetComponent<Bullet> ().player_damage = Damage;
     }
-    void  Update  ()  {
+    void  Update()  
+	{
         if ( animator )
         {
 			animator . SetBool ( "Jump" , bJump );
@@ -61,7 +64,7 @@ public  class  player_control  :  MonoBehaviour  {
 		BulletCreation.transform.parent = BulletPool;
 	}
 
-	public void Jump ()
+	public void Jump()
 	{
 		if (Jump_count < 2) 
 		{
@@ -126,5 +129,17 @@ public  class  player_control  :  MonoBehaviour  {
 				break;
 			}
 		}	
+	}
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.gameObject.tag == "Enemy") 
+		{
+			int EnemyDamage = coll.gameObject.GetComponent<Enemy>().Damage;
+			Destroy (coll.gameObject);
+			HP -= EnemyDamage;
+			if (HP <= 0)
+				Destroy (this.gameObject);
+		} 
 	}
 }
