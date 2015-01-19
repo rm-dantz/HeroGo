@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class newScript : MonoBehaviour {
+public class asidasda : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+	//asd
 	}
 	
 	// Update is called once per frame

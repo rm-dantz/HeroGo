@@ -1,13 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\player_control.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\asidasda.cs">
     <Files>
-      <File FileName="Assets\Scripts\Game\player_control.cs" Line="29" Column="34" />
-      <File FileName="Assets\Scripts\Game\Bullet.cs" Line="16" Column="13" />
-      <File FileName="Assets\Scripts\Game\Enemy.cs" Line="26" Column="13" />
-      <File FileName="Assets\Scripts\Game\ButtonManager.cs" Line="17" Column="26" />
-      <File FileName="Assets\Scripts\Game\Enemy_Creator.cs" Line="13" Column="13" />
-      <File FileName="Assets\Scripts\Game\TimeCounting.cs" Line="15" Column="13" />
+      <File FileName="Assets\Scripts\Game\asidasda.cs" Line="8" Column="7" />
+      <File FileName="Assets\Scripts\Game\player_control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\ButtonManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Enemy_Creator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\TimeCounting.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Game\BackGround.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
