@@ -188,6 +188,7 @@
      <Compile Include="Assets\Scripts\Game\TimeCounting.cs" />
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
      <Compile Include="Assets\Scripts\newScript.cs" />
+     <Compile Include="Assets\Scripts\sibalScript.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.3.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
