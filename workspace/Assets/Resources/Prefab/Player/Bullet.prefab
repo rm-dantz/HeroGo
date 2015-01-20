@@ -96,8 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b4287737853af41b5db16865418263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_pos: {fileID: 0}
-  player_damage: 0
+  player_damage: 1
+  type: 0
+  height: 0
+  width: 0
+  Fire: {fileID: 21300000, guid: 997212383f4e84f43bea44421f891624, type: 3}
+  Wood: {fileID: 21300000, guid: 10ec9adee9d3cd4469a41d8db0745fc0, type: 3}
+  Water: {fileID: 21300000, guid: 3fc6d726f0836794587fff8a161597a9, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
