@@ -34,6 +34,8 @@ public  class  player_control  :  MonoBehaviour  {
 	//HP_Bar
 
 
+    public Weapon wand;
+
     void  Awake()  
 	{
         animator =  GetComponentInChildren < Animator > ();
@@ -41,10 +43,17 @@ public  class  player_control  :  MonoBehaviour  {
 		y = y_base;
 		Jump_count = 0;
 		m_bulletObj.GetComponent<Bullet> ().player_damage = Damage;
+<<<<<<< HEAD
 		m_cap = new amor_a_info ();
 		m_robe = new amor_b_info ();
 		MaxHp = m_cap.HP + m_robe.HP;
 		CurrentHp = MaxHp;
+=======
+
+        wand = gameObject.AddComponent<WoodWand>();
+        wand.Init();
+
+>>>>>>> origin/master
     }
     void  Update()  
 	{
@@ -60,7 +69,7 @@ public  class  player_control  :  MonoBehaviour  {
 
 		//Attack_Speed
 		deltaTime += Time.deltaTime;
-		if(deltaTime >= Attack_speed)
+		if(deltaTime >= wand.m_AttackDelay)
 		{
 			shoot();
 			deltaTime = 0;
@@ -71,6 +80,8 @@ public  class  player_control  :  MonoBehaviour  {
 	{
 		GameObject BulletCreation = Instantiate (m_bulletObj, m_bulletCreator.transform.position, Quaternion.identity) as GameObject;
 
+        BulletCreation.transform.position = new Vector3(BulletCreation.transform.position.x, Random.Range(0f, 1f) - 2.5f, BulletCreation.transform.position.z);
+        BulletCreation.GetComponent<Bullet>().GetInfoFromWeapon(wand);
 		BulletCreation.transform.parent = BulletPool;
 	}
 
@@ -154,4 +165,48 @@ public  class  player_control  :  MonoBehaviour  {
 				Destroy (this.gameObject);
 		} 
 	}
+
+    public void ChangeWeapon(int index = 0)
+    {
+        Weapon newWand;
+
+        switch(index)
+        {
+            case 0:
+                newWand = new StandardWand();
+                break;
+                
+            case 1:
+                newWand = new WoodWand();
+                break;
+
+            case 2:
+                newWand = new SilverWand();
+                break;
+
+            case 3:
+                newWand = new GoldWand();
+                break;
+
+            default :
+                newWand = new Weapon();
+                break;
+        }
+        newWand.Init();
+        wand.Replace(newWand);
+        wand.ShowInfo();
+    }
+
+
+    void OnGUI()
+    {
+        string [] Label = {"Standard", "Wood", "Silver", "Gold" };
+        for ( int i = 0 ; i < 4 ; i++)
+        {
+            if ( GUI.Button(new Rect(50 + 125 * i, 50f, 100f, 50f), Label[i]))
+            {
+                ChangeWeapon(i);
+            }
+        }
+    }
 }
