@@ -194,6 +194,7 @@
      <Compile Include="Assets\Scripts\Game\amor_c_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_d_info.cs" />
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
+     <Compile Include="Assets\Scripts\Game\wand_drop.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.3.txt" />

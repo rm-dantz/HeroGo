@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
-    public string   m_WeaponName;   /* for unique item's name               */
+
     public float    m_AttackDamage; /* for Weapon's damage                  */
     public float    m_AttackDelay;   /* for delay time asfter attack */
     public int      m_DamageLevel;  /* for damage range apply min or max    */
@@ -24,7 +24,6 @@ public class Weapon : MonoBehaviour
 
     public virtual void Init()
     {
-        m_WeaponName = "WeaponName";
         m_AttackDamage = 0.0f;
         m_DamageLevel = 0;
         m_Attribute = Attribute_None;
@@ -34,7 +33,6 @@ public class Weapon : MonoBehaviour
 
     public void Replace(Weapon w)
     {
-        m_WeaponName   = w.m_WeaponName;
 
         if (int.Equals(m_Attribute, w.m_Attribute))
         {
@@ -55,7 +53,6 @@ public class Weapon : MonoBehaviour
 
     public void Replace(string WeaponName, float AttackDamage, float AttackDelay, int DamageLevel, int GradeLevel, int Attribute)
     {
-        m_WeaponName = WeaponName;
         m_AttackDamage = AttackDamage;
         m_AttackDelay = AttackDelay;
         m_DamageLevel = DamageLevel;
@@ -66,7 +63,6 @@ public class Weapon : MonoBehaviour
     public void ShowInfo()
     {
         Debug.Log(  
-                    "WeaponName : " + this.m_WeaponName + " / " +
                     "AttackDamage : " + this.m_AttackDamage + " / " +
                     "AttackDelay : " + this.m_AttackDelay + " / " +
                     "DamageLv : " + this.m_DamageLevel + " / " +
@@ -87,7 +83,6 @@ public class WoodWand : Weapon
 
     public override void Init()
     {
-        m_WeaponName = "WoodWand";
         m_Attribute = Attribute_Wood;
         m_DamageLevel = 1;
         m_GradeLevel = 1;
@@ -106,7 +101,6 @@ public class SilverWand : Weapon
 
     public override void Init()
     {
-        m_WeaponName = "SilverWand";
         m_Attribute = Attribute_Fire;
         m_AttackDelay = 0.75f;
         m_DamageLevel = 1;
@@ -124,7 +118,6 @@ public class GoldWand : Weapon
 
     public override void Init()
     {
-        m_WeaponName = "GoldWand";
         m_Attribute = Attribute_Water;
         m_AttackDelay = 0.75f;
         m_DamageLevel = 1;

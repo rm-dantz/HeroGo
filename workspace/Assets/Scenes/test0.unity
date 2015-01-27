@@ -1341,7 +1341,7 @@ GameObject:
   - 114: {fileID: 1744044407}
   - 114: {fileID: 1744044409}
   m_Layer: 0
-  m_Name: StageMAnager
+  m_Name: StageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_boxObj: {fileID: 100002, guid: e90881bb7ff2e3844ae05fd3b78284ce, type: 2}
+  m_wandObj: {fileID: 100002, guid: 4591fd2dbf9d61e44b8d420c53c04a01, type: 2}
 --- !u!1 &1747759497
 GameObject:
   m_ObjectHideFlags: 0
