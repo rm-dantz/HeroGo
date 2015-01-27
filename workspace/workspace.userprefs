@@ -1,15 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\asidasda.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\player_control.cs">
     <Files>
-      <File FileName="Assets\Scripts\Game\asidasda.cs" Line="8" Column="7" />
-      <File FileName="Assets\Scripts\Game\player_control.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\ButtonManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\Enemy_Creator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\TimeCounting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\amor_a_info.cs" Line="17" Column="11" />
+      <File FileName="Assets\Scripts\Game\ItemInterface.cs" Line="8" Column="14" />
+      <File FileName="Assets\Scripts\Game\player_control.cs" Line="152" Column="59" />
+      <File FileName="Assets\Scripts\Game\amor_b_info.cs" Line="14" Column="11" />
       <File FileName="Assets\Scripts\Game\BackGround.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\VitalBar.cs" Line="27" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

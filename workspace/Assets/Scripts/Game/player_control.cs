@@ -20,13 +20,19 @@ public  class  player_control  :  MonoBehaviour  {
 	//Bullet Creator
 	public GameObject m_bulletCreator;
 	//Player Abillity
-	public float Attack_speed = 1;
-	public int HP = 10;
-	public int MP = 10;
-	public float MP_Recorvery = 1.0f;
-	public int Damage = 1;
-	public float Defence = 0.0f;
-	public float Jump_height = 1.0f;
+	float Attack_speed = 1;
+	float MaxHp = 0f;
+	float CurrentHp = 0f;
+	int MP = 0;
+	float MP_Recorvery = 1.0f;
+	int Damage = 0;
+	int Defence = 0;
+	float Jump_height = 1.0f;
+	//Item_info
+	ItemInterface m_cap;
+	ItemInterface m_robe;
+	//HP_Bar
+
 
     void  Awake()  
 	{
@@ -35,6 +41,10 @@ public  class  player_control  :  MonoBehaviour  {
 		y = y_base;
 		Jump_count = 0;
 		m_bulletObj.GetComponent<Bullet> ().player_damage = Damage;
+		m_cap = new amor_a_info ();
+		m_robe = new amor_b_info ();
+		MaxHp = m_cap.HP + m_robe.HP;
+		CurrentHp = MaxHp;
     }
     void  Update()  
 	{
@@ -71,6 +81,7 @@ public  class  player_control  :  MonoBehaviour  {
 			DoJump ();
 			bJump = true;
 		}
+
 	}
 
 	void DoJump()
@@ -137,8 +148,9 @@ public  class  player_control  :  MonoBehaviour  {
 		{
 			int EnemyDamage = coll.gameObject.GetComponent<Enemy>().Damage;
 			Destroy (coll.gameObject);
-			HP -= EnemyDamage;
-			if (HP <= 0)
+			CurrentHp -= EnemyDamage;
+			VitalBar.getInstance().UpdateDisplay(MaxHp, CurrentHp);
+			if (CurrentHp <= 0)
 				Destroy (this.gameObject);
 		} 
 	}

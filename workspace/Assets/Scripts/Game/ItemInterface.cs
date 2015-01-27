@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class ItemInterface : MonoBehaviour 
+{
+	//public info item_info;
+	public string 	Item_Name;
+	public float 		HP;
+	public int 		Defence;
+	public int 		Damage;
+	public int 		Cri;
+	public int 		HP_Regen;
+	public int 		Barrier;
+	public int 		Potion_Up;
+	public int 		Item_Type;
 
 	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public virtual void replace()
+	{
 	}
 }
