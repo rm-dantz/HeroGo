@@ -193,11 +193,17 @@
      <Compile Include="Assets\Scripts\Game\amor_b_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_c_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_d_info.cs" />
+     <Compile Include="Assets\Scripts\Game\data\CSVParser.cs" />
+     <Compile Include="Assets\Scripts\Game\data\monsterDataLoad.cs" />
+     <Compile Include="Assets\Scripts\Game\data\obj\monsterData.cs" />
+     <Compile Include="Assets\Scripts\Game\data\obj\stageData.cs" />
+     <Compile Include="Assets\Scripts\Game\data\stageDataLoad.cs" />
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
      <Compile Include="Assets\Scripts\Game\wand_drop.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.3.txt" />
+     <None Include="Assets\Resources\data\monster_data.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
