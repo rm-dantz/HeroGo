@@ -8,7 +8,7 @@ public class DropItem : MonoBehaviour {
 	// Use this for initialization
 	void Awake() 
 	{
-		RandY = Random.Range (0, 2);
+		RandY = 1;//Random.Range (0, 2);
 		maxiamDistance = gameObject.transform.position.x - 20;
 	}
 	

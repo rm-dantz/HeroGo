@@ -1,4 +1,4 @@
-﻿using  UnityEngine ;
+using  UnityEngine ;
 using  System . Collections ;
 
 public  class  player_control  :  MonoBehaviour  {
@@ -20,19 +20,19 @@ public  class  player_control  :  MonoBehaviour  {
 	//Bullet Creator
 	public GameObject m_bulletCreator;
 	//Player Abillity
-	float Attack_speed = 1;
+//	float Attack_speed = 1;
 	float MaxHp = 0f;
 	float CurrentHp = 0f;
-	int MP = 10;
-	float MP_Recorvery = 1.0f;
+//	int MP = 10;
+//	float MP_Recorvery = 1.0f;
 	int Damage = 1;
 	float Defence = 0.0f;
 	float MagicDefence = 0.0f;
 	float Jump_height = 1.0f;
 	//Weapon
-    Weapon wand;
-	int Weapon_Grade;
-	int Weapon_Element;
+    Weapon wand = new Weapon();
+//	int Weapon_Grade;
+//	int Weapon_Element;
 	float Rate = 0f;
 	//Item
 	ItemInterface m_cap;
@@ -48,14 +48,15 @@ public  class  player_control  :  MonoBehaviour  {
 		Jump_count = 0;
 		m_bulletObj.GetComponent<Bullet> ().player_damage = Damage;
 
-        wand = gameObject.AddComponent<WoodWand>();
-        wand.Init();
-		Weapon_Grade = 0;
-		Weapon_Element = Weapon.Attribute_None;
+    //  wand = gameObject.AddComponent<Fire>();
+      wand.Init();
+//		Weapon_Grade = 0;
+//		Weapon_Element = Weapon.Attribute_Fire;
 		m_cap = gameObject.AddComponent<amor_a_info> ();
 		m_robe = gameObject.AddComponent<amor_b_info> ();
 		m_shoes = gameObject.AddComponent<amor_c_info> ();
 		m_cloak = gameObject.AddComponent<amor_d_info> ();
+
 		MaxHp = m_cap.HP + m_robe.HP + m_shoes.HP + m_cloak.HP;
 		CurrentHp = MaxHp;
 		Defence = m_cap.Defence + m_robe.Defence + m_shoes.Defence + m_cloak.Defence;
@@ -159,137 +160,35 @@ public  class  player_control  :  MonoBehaviour  {
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Enemy") 
-		{
-			Rate = CompareToType(wand.m_Attribute, coll.gameObject.GetComponent<Enemy>().type);
-			float EnemyDamage = (coll.gameObject.GetComponent<Enemy>().Damage * Rate ) - Defence;
 
-			if(EnemyDamage < 1)
-			{
-				CurrentHp -= 1f;
-			}
-			else
-			{
-				CurrentHp -= EnemyDamage;
-			}
-			Debug.Log(CurrentHp);
-			Destroy (coll.gameObject);
-			//HP_Bar Sync
-			VitalBar.getInstance().UpdateDisplay(MaxHp, CurrentHp);
-
-			//Weapon Stack
-			Weapon_Element = Weapon.Attribute_Fire;
-			wand.m_Attribute = Weapon_Element;
-			if(Weapon_Element == Weapon.Attribute_Fire)
-			{
-				Weapon_Grade++;
-				wand.m_GradeLevel = Weapon_Grade;
-			}
-			if (CurrentHp <= 0)
-				Destroy (this.gameObject);
-		} 
+		if (coll.gameObject.tag.Equals("Wand")){
+			Debug.Log("ddd");
+			wand.AccumWand(coll.gameObject.GetComponent<wand_drop>().currentElement);
+			Destroy(coll.gameObject);
+		}
 	}
 
-    public void ChangeWeapon(int index)
-    {
-        Weapon newWand;
-		Weapon_Grade = 0;
-
-        switch(index)
-        {       
-            case 1:
-                newWand = new WoodWand();
-                break;
-
-            case 2:
-                newWand = new SilverWand();
-                break;
-
-            case 3:
-                newWand = new GoldWand();
-                break;
-
-            default :
-                newWand = new Weapon();
-                break;
-        }
-        newWand.Init();
-        wand.Replace(newWand);
-        wand.ShowInfo();
-    }
 
 	float CompareToType(int MyType, int OtherType)
 	{
-		if(MyType == 1)//Fire
-		{
-			if(OtherType == 1)//Fire
-			{
-				return 1.0f;
-			}
-			else if(OtherType == 2)//Wood
-			{
-				return 1.2f;
-			}
-			else if(OtherType == 3)//Water
-			{
-				return 0.8f;
-			}
-			else
-			{
-				return 1.0f;
-			}
-		}
-		else if(MyType == 2)//Wood
-		{
-			if(OtherType == 1)//Fire
-			{
-				return 0.8f;
-			}
-			else if(OtherType == 2)//Wood
-			{
-				return 1.0f;
-			}
-			else if(OtherType == 3)//Water
-			{
-				return 1.2f;
-			}
-			else
-			{
-				return 1.0f;
-			}
-		}
-		else if(MyType == 3)//Water
-		{
-			if(OtherType == 1)//Fire
-			{
-				return 1.2f;
-			}
-			else if(OtherType == 2)//Wood
-			{
-				return 0.8f;
-			}
-			else if(OtherType == 3)//Water
-			{
-				return 1.0f;
-			}
-			else
-			{
-				return 1.0f;
-			}
-		}
-		else
+		if (OtherType == MyType)
 			return 1.0f;
+
+		else if (OtherType - MyType > 0) {
+			if(OtherType - MyType >1)
+				return 1.2f;
+			else
+				return 0.8f;
+		} else if (OtherType - MyType < 0) {
+			if(OtherType - MyType < -1)
+				return 0.8f;
+			else
+				return 1.2f;
+		}
+		return 1.0f;
 	}
 
     void OnGUI()
     {
-        string [] Label = {"Standard", "Wood", "Silver", "Gold" };
-        for ( int i = 1 ; i < 4 ; i++)
-        {
-            if ( GUI.Button(new Rect(50 + 125 * i, 50f, 100f, 50f), Label[i]))
-            {
-                ChangeWeapon(i);
-            }
-        }
     }
 }

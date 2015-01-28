@@ -7,13 +7,14 @@ public class wand_drop : MonoBehaviour {
 	public float speed = 1f;
 	public float transitionTime = 0.5f;
 	//public int startElement = 1;
-	int currentElement = 1;
+	public int currentElement;
 	float dTime = 0f;
 
 	// Use this for initialization
 	void Awake() 
 	{
-		RandY = Random.Range (0, 2);
+		currentElement = 1;
+		RandY = 1;//Random.Range (0, 2);
 		maxiamDistance = gameObject.transform.position.x - 20;
 	}
 	
@@ -23,6 +24,7 @@ public class wand_drop : MonoBehaviour {
 		dTime += Time.deltaTime;
 		if (dTime > transitionTime) {
 			currentElement = Random.Range(1,4);
+			Debug.Log(currentElement);
 			dTime = 0;
 		}
 		if (currentElement == 1) {
@@ -48,6 +50,7 @@ public class wand_drop : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Player") 
 		{
+
 			//Time.timeScale = 0;
 		} 
 	}

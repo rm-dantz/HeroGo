@@ -22,7 +22,7 @@ public class StageManager : MonoBehaviour {
 		DropDelay += Time.deltaTime;
 		if(DropDelay > 2f)
 		{
-			RandY = Random.Range (-1f, 2.5f);
+			RandY =1;// Random.Range (-1f, 2.5f);
 			BoxPos = new Vector3 (13, RandY, 0);
 			Instantiate (m_boxObj, BoxPos, Quaternion.identity);
 			DropDelay = 0f;
@@ -32,7 +32,7 @@ public class StageManager : MonoBehaviour {
 		wandDelay += Time.deltaTime;
 		if(wandDelay > 4f)
 		{
-			RandY = Random.Range (-1f, 2.5f);
+			RandY =1;// Random.Range (-1f, 2.5f);
 			wandPos = new Vector3 (13, RandY, 0);
 			Instantiate (m_wandObj, wandPos, Quaternion.identity);
 			wandDelay = 0f;
