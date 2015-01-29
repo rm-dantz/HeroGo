@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 	// Use this for initialization
-	public float speed = 5f;
+	float speed = 10f;
 	public float player_damage = 0f;
 	float maxiamDistance;
 
@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour {
     public float width = 0f;
 
     public Sprite Fire;
-    public Sprite Grass;
+    public Sprite Wood;
     public Sprite Water;
 
 	void Awake() 
@@ -35,18 +35,18 @@ public class Bullet : MonoBehaviour {
     {
         width = weapon.m_GradeLevel;
 		height = weapon.m_GradeLevel;
-       // speed = 15f;
+        speed = 15f;
 
         transform.localScale = new Vector3(width, height, 1f);
 
         switch(weapon.m_Attribute)
         {
             case 1 : // wood
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = Fire;
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = Wood;
                 break;
 
             case 2 : // fire
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = Grass;
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = Fire;
                 break;
 
             case 3 : // water

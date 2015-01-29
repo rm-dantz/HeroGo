@@ -16,7 +16,8 @@ public class ItemInterface : MonoBehaviour
 	public int 		Item_Type;
 
 	// Use this for initialization
-	public virtual void replace()
+	public virtual void replace(GameObject Info)
 	{
+
 	}
 }

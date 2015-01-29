@@ -3,14 +3,11 @@ using System.Collections;
 
 public class amor_c_info : ItemInterface
 {
-	//Item Detail Info
-	public int Grade;
-	
 	// Use this for initialization
 	public amor_c_info()
 	{
 		Item_Type = 3;
-		Item_Name = "normal";
+		Item_Name = "normal shoes";
 		HP = 25f;
 		Defence = 1f;
 		MagicDefence = 1f;
@@ -19,46 +16,19 @@ public class amor_c_info : ItemInterface
 		HP_Regen = 0;
 		Barrier = 0;
 		Potion_Up = 0;
-		
-		Debug.Log 
-			(
-				"ItemName : " + Item_Name + " / " +
-				"HP : " + HP + " / " +
-				"Defence" + Defence + " / " +
-				"Damage : " + Damage + " / " +
-				"Cri : " + Cri + " / " +
-				"HP : " + HP_Regen + " / " +
-				"Barrier : " + Barrier + " / " +
-				"Potion_up : " + Potion_Up + " / "
-				);
 	}
 	
-	public override void replace()
+	public override void replace(GameObject Info)
 	{
-		Grade = Random.Range (0, 4);
-		
-		switch (Grade) 
-		{
-		case 0: // Common
-		{
-			
-			break;
-		}
-		case 1: // UnCommon
-		{
-			
-			break;
-		}
-		case 2: // Rare
-		{
-			
-			break;
-		}
-		case 3: // Legendary
-		{
-			
-			break;
-		}
-		}
+		Debug.Log ("Complete shoes");
+		Item_Name = Info.gameObject.GetComponent<DropItem> ().m_item.Item_Name;
+		HP = Info.gameObject.GetComponent<DropItem> ().m_item.HP;
+		Defence = Info.gameObject.GetComponent<DropItem> ().m_item.Defence;
+		MagicDefence = Info.gameObject.GetComponent<DropItem> ().m_item.MagicDefence;
+		Damage = Info.gameObject.GetComponent<DropItem> ().m_item.Damage;
+		Cri = Info.gameObject.GetComponent<DropItem> ().m_item.Cri;
+		HP_Regen = Info.gameObject.GetComponent<DropItem> ().m_item.HP_Regen;
+		Barrier = Info.gameObject.GetComponent<DropItem> ().m_item.Barrier;
+		Potion_Up = Info.gameObject.GetComponent<DropItem> ().m_item.Potion_Up;
 	}
 }

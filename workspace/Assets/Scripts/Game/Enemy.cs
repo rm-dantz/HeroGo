@@ -20,9 +20,9 @@ public class Enemy : MonoBehaviour
     #region MonsterParameter
 
     public float    moveSpd = 1f;                       // moveSpeed;
-	public float    Damage = 1;                         // Attacking Damage
+	public float      Damage = 1;                         // Attacking Damage
 	public int      Level = 1;                          // Monster's Level;
-    public float    HP;                                 // Health Point
+    public float      HP;                                 // Health Point
     public float    atkSpd;                             // attack Speed;
     public float    projSize;                           // Projectile's Size;  
     public float    projSpeed;                          // projectile's Speed;

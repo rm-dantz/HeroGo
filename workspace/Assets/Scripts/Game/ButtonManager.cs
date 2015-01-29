@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ButtonManager : MonoBehaviour 
 {
 	public player_control m_objPlayer;	
 	public Enemy_Creator m_enemy_cr;
+	public GameObject ChangeMenu;
+
 	void Awake() {
 	
 	}
@@ -22,5 +24,17 @@ public class ButtonManager : MonoBehaviour
 	public void ClickRegen()
 	{
 		m_enemy_cr.Regen ();
+	}
+
+	public void OnClickOk()
+	{
+		Debug.Log ("OKAY");
+		m_objPlayer.gameObject.GetComponent<player_control> ().isPressedOn = true;
+	}
+
+	public void OnClickCancel()
+	{
+		NGUITools.SetActive(ChangeMenu.gameObject, false);
+		Time.timeScale = 1f;
 	}
 }
