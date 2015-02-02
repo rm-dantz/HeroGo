@@ -2312,8 +2312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe978c94fd082499e811086137e160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Limit_Second: 10
-  Monster_Level: 0
 --- !u!4 &1744044408
 Transform:
   m_ObjectHideFlags: 0
@@ -2339,7 +2337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_boxObj: {fileID: 100002, guid: e90881bb7ff2e3844ae05fd3b78284ce, type: 2}
   m_wandObj: {fileID: 100002, guid: 1ab1e81a623b4114f83c1b358b328c11, type: 2}
-  Reset_Distance: 500
+  Reset_Distance: 50
 --- !u!1 &1747759497
 GameObject:
   m_ObjectHideFlags: 0

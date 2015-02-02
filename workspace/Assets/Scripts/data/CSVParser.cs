@@ -40,7 +40,6 @@ public class CSVParser
 			string[] stringList = inputData[i].Split( ',' );
 			if( stringList.Length == 0 )
 			{
-				
 				continue;
 			}
 			

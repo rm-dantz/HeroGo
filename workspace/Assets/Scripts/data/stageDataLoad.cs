@@ -5,7 +5,7 @@ using System.Collections;
 public class stageDataLoad : CSVParser {
 
 	string _baseFileName;
-	ArrayList _stageDataMap = new ArrayList();
+	public ArrayList _stageDataMap = new ArrayList();
 
 	
 	public stageDataLoad () {
@@ -29,16 +29,16 @@ public class stageDataLoad : CSVParser {
 		
 		int count = 0;
 		stageData tempData = new stageData();
-		Debug.Log (inputData [0]);
+
 		tempData.stageID			= Convert.ToInt32( inputData[count++] );
 		tempData.type				= Convert.ToInt32( inputData[count++] );
 		tempData.length				= Convert.ToInt32( inputData[count++] );
-		tempData.itemLevel			= inputData[count++].Split('/');
 		tempData.obstacleRate		= inputData[count++].Split('/');
 		tempData.obstacleID			= inputData[count++].Split('/');
 		tempData.treasureRate		= inputData[count++].Split('/');
 		tempData.treasureID			= inputData[count++].Split('/');
 		tempData.armorMinLvl		= Convert.ToInt32( inputData[count++] );
+		tempData.armorLvlRate		= inputData[count++].Split('/');
 		tempData.armorGradeDropRate = inputData[count++].Split('/');
 		tempData.wandRate			= inputData[count++].Split('/');
 		tempData.monsterList		= inputData[count++].Split('/');
@@ -50,13 +50,11 @@ public class stageDataLoad : CSVParser {
 		tempData.resetWandType		= Convert.ToInt32 (inputData [count++]);
 		
 		_stageDataMap.Add( tempData );
-		
-		
 	}
 
 
 	
-	private stageData GetStageData( int stageID )
+	public stageData GetStageData( int stageID )
 	{
 		foreach (stageData returnData in _stageDataMap) {
 			if ( returnData.stageID == stageID )

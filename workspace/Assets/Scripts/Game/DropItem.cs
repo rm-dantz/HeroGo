@@ -10,6 +10,15 @@ public class DropItem : MonoBehaviour {
 	int Support_Option;
 	int Special_Option;
 	int Item_Level = 10;
+	//Data Load
+	armorDataLoad 	m_ParseItem;
+	armorData 		m_ItemData;
+	string[] 		m_treasureRate;
+	string[]		m_treasureID;
+	int				m_armorMinLvl;
+	string[]		m_armorLvlRate;
+	string[]		m_armorGradeDropRate;
+	StageManager	m_stage;
 	//Item Info
 	public struct ITEM
 	{
@@ -23,11 +32,31 @@ public class DropItem : MonoBehaviour {
     	public int 		Barrier;
     	public int 		Potion_Up;
     	public int 		Item_Type;
+
+		public string 		name;
+		public int			armorID;
+		public int			armorType;
+		public int			armorGrade;
+		public int			armorHP;
+		public int			def;
+		public int			mDef;
+		public int			mAtk;
+		public float		critChance;
+		public float		hpRegen;
+		public float		potionup;
+		public int			shield;
+		public int			critOnEnemy;
+		public int			slow;
+		public int			thorns;
+		public int			chargeAtk;
+
 	}
 	public ITEM m_item;
 	// Use this for initialization
 	void Awake() 
 	{
+		m_ParseItem = new armorDataLoad ();
+		m_stage 	= new StageManager ();
 		m_item.Item_Name = "normal";
 		m_item.HP = 25;
 		m_item.Defence = 1f;
@@ -41,6 +70,7 @@ public class DropItem : MonoBehaviour {
 		RandY = Random.Range (0, 2);
 		maxiamDistance = gameObject.transform.position.x - 20;
 		ChangeToOoption ();
+		ChooseToArmor ();
 	}
 	
 	// Update is called once per frame
@@ -158,5 +188,8 @@ public class DropItem : MonoBehaviour {
 		}
 		}
 	}
-
+	void ChooseToArmor()
+	{
+		
+	}
 }
