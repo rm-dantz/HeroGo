@@ -179,13 +179,9 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\Resources\data\CSVParser.cs" />
-     <Compile Include="Assets\Resources\data\armorDataLoad.cs" />
-     <Compile Include="Assets\Resources\data\monsterDataLoad.cs" />
      <Compile Include="Assets\Resources\data\obj\armorData.cs" />
      <Compile Include="Assets\Resources\data\obj\monsterData.cs" />
      <Compile Include="Assets\Resources\data\obj\stageData.cs" />
-     <Compile Include="Assets\Resources\data\stageDataLoad.cs" />
      <Compile Include="Assets\Scripts\Game\BackGround.cs" />
      <Compile Include="Assets\Scripts\Game\Bullet.cs" />
      <Compile Include="Assets\Scripts\Game\ButtonManager.cs" />
@@ -204,6 +200,10 @@
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
      <Compile Include="Assets\Scripts\Game\wand_drop.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\data\CSVParser.cs" />
+     <Compile Include="Assets\Scripts\data\armorDataLoad.cs" />
+     <Compile Include="Assets\Scripts\data\monsterDataLoad.cs" />
+     <Compile Include="Assets\Scripts\data\stageDataLoad.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.3.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

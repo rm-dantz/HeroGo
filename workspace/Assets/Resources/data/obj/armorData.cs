@@ -15,6 +15,7 @@ public class armorData {
 	public int			mAtk;
 	public float		critChance;
 	public float		hpRegen;
+	public float		potionup;
 	public int			shield;
 	public int			critOnEnemy;
 	public int			slow;
@@ -35,6 +36,7 @@ public class armorData {
 		mAtk 			= data.mAtk;
 		critChance 		= data.critChance;
 		hpRegen 		= data.hpRegen;
+		potionup 		= data.potionup;
 		shield 			= data.shield;
 		critOnEnemy 	= data.critOnEnemy;
 		slow 			= data.slow;

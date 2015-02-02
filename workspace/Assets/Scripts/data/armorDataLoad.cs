@@ -29,7 +29,7 @@ public class armorDataLoad : CSVParser {
 		
 		int count = 0;
 		armorData tempData = new armorData();
-		Debug.Log (inputData [0]);
+
 		tempData.name 			= inputData[count++];
 		tempData.armorID 		= Convert.ToInt32( inputData[count++] );
 		tempData.armorType 		= Convert.ToInt32( inputData[count++] );
@@ -40,6 +40,7 @@ public class armorDataLoad : CSVParser {
 		tempData.mAtk 			= Convert.ToInt32( inputData[count++] );
 		tempData.critChance     = (float)Convert.ToDouble( inputData [count++] ); 
 		tempData.hpRegen 	    = (float)Convert.ToDouble( inputData [count++] ); 
+		tempData.potionup 		= Convert.ToInt32( inputData[count++] );
 		tempData.shield 		= Convert.ToInt32( inputData[count++] );
 		tempData.critOnEnemy    = Convert.ToInt32( inputData[count++] );
 		tempData.slow 		    = Convert.ToInt32( inputData[count++] );
