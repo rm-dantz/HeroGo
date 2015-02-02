@@ -197,6 +197,16 @@
      <Compile Include="Assets\Scripts\Game\amor_b_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_c_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_d_info.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Game\data\CSVParser.cs" />
+     <Compile Include="Assets\Scripts\Game\data\armorDataLoad.cs" />
+     <Compile Include="Assets\Scripts\Game\data\monsterDataLoad.cs" />
+     <Compile Include="Assets\Scripts\Game\data\obj\armorData.cs" />
+     <Compile Include="Assets\Scripts\Game\data\obj\monsterData.cs" />
+     <Compile Include="Assets\Scripts\Game\data\obj\stageData.cs" />
+     <Compile Include="Assets\Scripts\Game\data\stageDataLoad.cs" />
+=======
+>>>>>>> origin/master
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
      <Compile Include="Assets\Scripts\Game\wand_drop.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
