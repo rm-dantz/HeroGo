@@ -5,7 +5,8 @@ public class Enemy : MonoBehaviour
 {
 	//Game time
 	public GameObject GameTime;
-
+	//Monster Data
+	CSVParser m_monsterData;
     #region MonterTypeValues
 
     public int      id;                                 //  monster's unique id;
@@ -20,9 +21,9 @@ public class Enemy : MonoBehaviour
     #region MonsterParameter
 
     public float    moveSpd = 1f;                       // moveSpeed;
-	public float    Damage = 1;                         // Attacking Damage
+	public float      Damage = 1;                         // Attacking Damage
 	public int      Level = 1;                          // Monster's Level;
-    public float    HP;                                 // Health Point
+    public float      HP;                                 // Health Point
     public float    atkSpd;                             // attack Speed;
     public float    projSize;                           // Projectile's Size;  
     public float    projSpeed;                          // projectile's Speed;
@@ -41,6 +42,8 @@ public class Enemy : MonoBehaviour
 		maxiamDistance = gameObject.transform.position.x - 15;
 		GameTime = GameObject.Find ("TimeCounting");
 		//Level += GameTime.gameObject.GetComponent<TimeCounting> ().Monster_Level;
+		m_monsterData = new monsterDataLoad ();
+		m_monsterData.Load ();
 	}
 	
 	// Update is called once per frame
