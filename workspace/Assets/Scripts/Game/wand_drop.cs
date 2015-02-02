@@ -24,7 +24,7 @@ public class wand_drop : MonoBehaviour {
 		dTime += Time.deltaTime;
 		if (dTime > transitionTime) {
 			currentElement = Random.Range(1,4);
-			Debug.Log(currentElement);
+			//Debug.Log(currentElement);
 			dTime = 0;
 		}
 		if (currentElement == 1) {

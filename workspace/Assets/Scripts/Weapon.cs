@@ -56,12 +56,12 @@ public class Weapon : MonoBehaviour
 	
 	public void ShowInfo()
 	{
-		Debug.Log(  
-		          "AttackDamage : " + this.m_AttackDamage + " / " +
-		          "AttackDelay : " + this.m_AttackDelay + " / " +
-		          "DamageLv : " + this.m_DamageLevel + " / " +
-		          "GradeLv : " + this.m_GradeLevel + " / " +
-		          "Attribute : " + this.m_Attribute);
+		//Debug.Log(  
+		   //       "AttackDamage : " + this.m_AttackDamage + " / " +
+		    //      "AttackDelay : " + this.m_AttackDelay + " / " +
+		     //     "DamageLv : " + this.m_DamageLevel + " / " +
+		     //     "GradeLv : " + this.m_GradeLevel + " / " +
+		     //     "Attribute : " + this.m_Attribute);
 	}
 	//public virtual Projectile CreateProjectile() { return null; }
 }

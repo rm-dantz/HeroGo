@@ -2339,6 +2339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_boxObj: {fileID: 100002, guid: e90881bb7ff2e3844ae05fd3b78284ce, type: 2}
   m_wandObj: {fileID: 100002, guid: 1ab1e81a623b4114f83c1b358b328c11, type: 2}
+  Reset_Distance: 500
 --- !u!1 &1747759497
 GameObject:
   m_ObjectHideFlags: 0
