@@ -32,18 +32,22 @@ public class stageDataLoad : CSVParser {
 		Debug.Log (inputData [0]);
 		tempData.stageID			= Convert.ToInt32( inputData[count++] );
 		tempData.type				= Convert.ToInt32( inputData[count++] );
-		tempData.itemLevel			= inputData[count++].Split('/');
 		tempData.length				= Convert.ToInt32( inputData[count++] );
-		tempData.obstacleRate  		= inputData[count++].Split('/');
-		tempData.obstacleID			= Convert.ToInt32( inputData[count++] );	
+		tempData.itemLevel			= inputData[count++].Split('/');
+		tempData.obstacleRate		= inputData[count++].Split('/');
+		tempData.obstacleID			= inputData[count++].Split('/');
 		tempData.treasureRate		= inputData[count++].Split('/');
+		tempData.treasureID			= inputData[count++].Split('/');
+		tempData.armorMinLvl		= Convert.ToInt32( inputData[count++] );
+		tempData.armorGradeDropRate = inputData[count++].Split('/');
 		tempData.wandRate			= inputData[count++].Split('/');
-		tempData.monsterRate    	= inputData[count++].Split('/');
-		tempData.monsterMax    		= Convert.ToInt32( inputData [count++] ); 
-		tempData.monsterLevel		= inputData[count++].Split('/');;
-		tempData.monsterPool    	= inputData[count++].Split('/');
-		tempData.resetWandType    	= Convert.ToInt32 (inputData [count++] );
-
+		tempData.monsterList		= inputData[count++].Split('/');
+		tempData.monsterLevel		= inputData[count++].Split('/');
+		tempData.monsterMax 		= Convert.ToInt32 (inputData [count++]);
+		tempData.monsterRate		= inputData[count++].Split('/');
+		tempData.namedMonster		= Convert.ToInt32 (inputData [count++]);
+		tempData.enchant			= Convert.ToInt32 (inputData [count++]);
+		tempData.resetWandType		= Convert.ToInt32 (inputData [count++]);
 		
 		_stageDataMap.Add( tempData );
 		
@@ -52,7 +56,7 @@ public class stageDataLoad : CSVParser {
 
 
 	
-	private stageData GetHeroData( int stageID )
+	private stageData GetStageData( int stageID )
 	{
 		foreach (stageData returnData in _stageDataMap) {
 			if ( returnData.stageID == stageID )

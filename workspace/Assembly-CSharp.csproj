@@ -194,7 +194,9 @@
      <Compile Include="Assets\Scripts\Game\amor_c_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_d_info.cs" />
      <Compile Include="Assets\Scripts\Game\data\CSVParser.cs" />
+     <Compile Include="Assets\Scripts\Game\data\armorDataLoad.cs" />
      <Compile Include="Assets\Scripts\Game\data\monsterDataLoad.cs" />
+     <Compile Include="Assets\Scripts\Game\data\obj\armorData.cs" />
      <Compile Include="Assets\Scripts\Game\data\obj\monsterData.cs" />
      <Compile Include="Assets\Scripts\Game\data\obj\stageData.cs" />
      <Compile Include="Assets\Scripts\Game\data\stageDataLoad.cs" />

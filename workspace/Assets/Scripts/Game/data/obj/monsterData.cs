@@ -10,8 +10,6 @@ public class monsterData  {
 	public int ID;
 	public int type;
 	public int element;
-	public int grade;
-	public int colorTint;
 	public int HP;
 	public int physAtk;
 	public int magicAtk;
@@ -21,8 +19,6 @@ public class monsterData  {
 	public float shotSpd;
 	public int flightPattern;
 	public int gold;
-	public string[] lootID;
-	public int lootQuant;
 	public int height;
 	public int length;
 
@@ -32,8 +28,6 @@ public class monsterData  {
 		ID	 	 		= _mons.ID;
 		type	 		= _mons.type;
 		element	 		= _mons.element;
-		grade			= _mons.grade;
-		colorTint 		= _mons.colorTint;
 		HP 				= _mons.HP;
 		physAtk 		= _mons.physAtk;
 		magicAtk 		= _mons.magicAtk;
@@ -43,8 +37,6 @@ public class monsterData  {
 		shotSpd 		= _mons.shotSpd;
 		flightPattern 	= _mons.flightPattern;
 		gold 			= _mons.gold;
-		lootID 			= _mons.lootID;
-		lootQuant 		= _mons.lootQuant;
 		height 			= _mons.height;
 		length 			= _mons.length;
 

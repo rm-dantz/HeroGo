@@ -34,8 +34,6 @@ public class monsterDataLoad : CSVParser {
 		tempData.ID	 	 			= Convert.ToInt32( inputData[count++] );
 		tempData.type	 			= Convert.ToInt32( inputData[count++] );
 		tempData.element	 		= Convert.ToInt32( inputData[count++] );
-		tempData.grade			  	= Convert.ToInt32( inputData[count++] );
-		tempData.colorTint 			= Convert.ToInt32( inputData[count++] );	
 		tempData.HP 				= Convert.ToInt32( inputData[count++] );
 		tempData.physAtk 			= Convert.ToInt32( inputData[count++] );
 		tempData.magicAtk 		    = Convert.ToInt32( inputData[count++] );
@@ -45,8 +43,6 @@ public class monsterDataLoad : CSVParser {
 		tempData.shotSpd 		    = (float)Convert.ToDouble (inputData [count++] );
 		tempData.flightPattern 		= Convert.ToInt32( inputData[count++] );
 		tempData.gold 				= Convert.ToInt32( inputData[count++] );
-		tempData.lootID 			= inputData[count++].Split('/');
-		tempData.lootQuant 			= Convert.ToInt32( inputData[count++] );
 		tempData.height 			= Convert.ToInt32( inputData[count++] );
 		tempData.length 			= Convert.ToInt32( inputData[count++] );
 		
@@ -56,7 +52,7 @@ public class monsterDataLoad : CSVParser {
 
 	}
 
-	private monsterData GetHeroData( int monsterID )
+	private monsterData GetMonsterData( int monsterID )
 	{
 		foreach (monsterData returnData in _monsterDataMap) {
 			if ( returnData.ID == monsterID )
@@ -65,9 +61,9 @@ public class monsterDataLoad : CSVParser {
 		return null;
 	}
 	
-	public monsterData CreateHero( int hearoId )
+	public monsterData CreateMonster( int monsID )
 	{
-		monsterData data = GetHeroData (hearoId);
+		monsterData data = GetMonsterData (monsID);
 		return data;
 	}
 
