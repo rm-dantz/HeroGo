@@ -10,51 +10,51 @@ public class CurrentItemDes : MonoBehaviour {
 		if(GetItem.gameObject.GetComponent<player_control>().ItemType == 1)
 		{
 			gameObject.GetComponent<UILabel> ().text = 
-					"Name : " + GetItem.gameObject.GetComponent<player_control>().current_cap.Item_Name + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cap.HP  + " \n " +
-					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_cap.Defence  + " \n " +
-					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_cap.Damage  + " \n " +
-					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_cap.Cri  + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cap.HP_Regen  + " \n " +
-					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_cap.Barrier  + " \n " +
-					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_cap.Potion_Up;
+					"Name : " + GetItem.gameObject.GetComponent<player_control>().current_cap.name + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cap.armorHP  + " \n " +
+					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_cap.def  + " \n " +
+					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_cap.mAtk  + " \n " +
+					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_cap.critChance  + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cap.hpRegen  + " \n " +
+					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_cap.shield  + " \n " +
+					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_cap.potionup;
 
 		}
 		if(GetItem.gameObject.GetComponent<player_control>().ItemType == 2)
 		{
 			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + GetItem.gameObject.GetComponent<player_control>().current_robe.Item_Name + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_robe.HP  + " \n " +
-					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_robe.Defence  + " \n " +
-					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_robe.Damage  + " \n " +
-					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_robe.Cri  + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_robe.HP_Regen  + " \n " +
-					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_robe.Barrier  + " \n " +
-					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_robe.Potion_Up;
+				"Name : " + GetItem.gameObject.GetComponent<player_control>().current_robe.name + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_robe.armorHP  + " \n " +
+					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_robe.def  + " \n " +
+					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_robe.mAtk  + " \n " +
+					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_robe.critChance  + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_robe.hpRegen  + " \n " +
+					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_robe.shield  + " \n " +
+					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_robe.potionup;
 		}
 		if(GetItem.gameObject.GetComponent<player_control>().ItemType == 3)
 		{
 			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.Item_Name + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.HP  + " \n " +
-					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.Defence  + " \n " +
-					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.Damage  + " \n " +
-					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.Cri  + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.HP_Regen  + " \n " +
-					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.Barrier  + " \n " +
-					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.Potion_Up;
+				"Name : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.name + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.armorHP  + " \n " +
+					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.def  + " \n " +
+					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.mAtk  + " \n " +
+					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.critChance  + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.hpRegen  + " \n " +
+					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.shield  + " \n " +
+					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_shoes.potionup;
 		}
 		if(GetItem.gameObject.GetComponent<player_control>().ItemType == 4)
 		{
 			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.Item_Name + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.HP  + " \n " +
-					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.Defence  + " \n " +
-					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.Damage  + " \n " +
-					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.Cri  + " \n " +
-					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.HP_Regen  + " \n " +
-					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.Barrier  + " \n " +
-					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.Potion_Up;
+				"Name : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.name + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.armorHP  + " \n " +
+					"Defence : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.def  + " \n " +
+					"Damage : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.mAtk  + " \n " +
+					"Cri : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.critChance  + " \n " +
+					"HP : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.hpRegen  + " \n " +
+					"Barrier : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.shield  + " \n " +
+					"Potion_up : " + GetItem.gameObject.GetComponent<player_control>().current_cloack.potionup;
 		}
 	}
 	// Update is called once per frame

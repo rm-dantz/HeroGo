@@ -28,7 +28,6 @@ public class ButtonManager : MonoBehaviour
 
 	public void OnClickOk()
 	{
-		Debug.Log ("OKAY");
 		m_objPlayer.gameObject.GetComponent<player_control> ().isPressedOn = true;
 	}
 

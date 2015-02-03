@@ -1,41 +1,22 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class DropItem : MonoBehaviour {
-	float RandY;
-	float maxiamDistance;
-	public int Type; // 0 : cap, 1 : robe, 2 : shoes, 3 : cloack
-	public float speed = 1f;
-	int Grade;
-	int Support_Option;
-	int Special_Option;
-	int Item_Level = 10;
+	float 				RandY;
+	float 				maxiamDistance;
+	public float 		speed = 1f;
 	//Data Load
-	armorDataLoad 	m_ParseItem;
-	armorData 		m_ItemData;
-	string[] 		m_treasureRate;
-	string[]		m_treasureID;
-	int				m_armorMinLvl;
-	string[]		m_armorLvlRate;
-	string[]		m_armorGradeDropRate;
-	StageManager	m_stage;
+	armorDataLoad 		m_ItemDataLoad;
+	public armorData 	m_ItemData;
+	int[] 				Item_load_info;
+	int					ChooseItemId;
 	//Item Info
 	public struct ITEM
 	{
-		public string 	Item_Name;
-    	public int 		HP;
-    	public float 	Defence;
-		public float	MagicDefence;
-    	public int 		Damage;
-    	public int 		Cri;
-    	public int 		HP_Regen;
-    	public int 		Barrier;
-    	public int 		Potion_Up;
-    	public int 		Item_Type;
-
 		public string 		name;
 		public int			armorID;
-		public int			armorType;
+		public int			armorType; // 0 : cap, 1 : robe, 2 : shoes, 3 : cloack
 		public int			armorGrade;
 		public int			armorHP;
 		public int			def;
@@ -49,27 +30,15 @@ public class DropItem : MonoBehaviour {
 		public int			slow;
 		public int			thorns;
 		public int			chargeAtk;
-
 	}
 	public ITEM m_item;
 	// Use this for initialization
 	void Awake() 
 	{
-		m_ParseItem = new armorDataLoad ();
-		m_stage 	= new StageManager ();
-		m_item.Item_Name = "normal";
-		m_item.HP = 25;
-		m_item.Defence = 1f;
-		m_item.MagicDefence = 1f;
-		m_item.Damage = 0;
-		m_item.Cri = 0;
-		m_item.HP_Regen = 0;
-		m_item.Barrier = 0;
-		m_item.Potion_Up = 0;
-		Type = Random.Range (1, 5);
-		RandY = Random.Range (0, 2);
+		m_ItemDataLoad = new armorDataLoad ();
+		m_ItemDataLoad.Load ();
+		RandY = UnityEngine.Random.Range (0, 2);
 		maxiamDistance = gameObject.transform.position.x - 20;
-		ChangeToOoption ();
 		ChooseToArmor ();
 	}
 	
@@ -83,113 +52,38 @@ public class DropItem : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
-
-	public void ChangeToOoption()
-	{
-		Grade = Random.Range (0, 4);
-		
-		switch (Grade) 
-		{
-		case 0: // Common
-		{
-			m_item.HP += Item_Level;
-			m_item.Defence += Item_Level;
-			break;
-		}
-		case 1: // UnCommon
-		{
-			m_item.HP += Item_Level;
-			m_item.Defence += Item_Level;
-			Support_Option = Random.Range (0, 5);
-			SetSupportOption(Support_Option);
-			break;
-		}
-		case 2: // Rare
-		{
-			m_item.HP += Item_Level;
-			m_item.Defence += Item_Level;
-			Special_Option = Random.Range (0, 5);
-			SetSpecialOption(Special_Option);
-			break;
-		}
-		case 3: // Legendary
-		{
-			m_item.HP += Item_Level;
-			m_item.Defence += Item_Level;
-			Support_Option = Random.Range (0, 5);
-			SetSupportOption(Support_Option);
-			Special_Option = Random.Range (0, 5);
-			SetSpecialOption(Special_Option);
-			break;
-		}
-		}
-	}
 	
-	public void SetSupportOption(int SupportOptionLevel)
-	{
-		switch (SupportOptionLevel) 
-		{
-		case 0:
-		{
-			m_item.Damage += Item_Level;
-			break;
-		}
-		case 1:
-		{
-			m_item.Cri += Item_Level;
-			break;
-		}
-		case 2:
-		{
-			m_item.HP_Regen += Item_Level;
-			break;
-		}
-		case 3:
-		{
-			m_item.Barrier += Item_Level;
-			break;
-		}
-		case 4:
-		{
-			m_item.Potion_Up += Item_Level;
-			break;
-		}
-		}
-	}
-	
-	public void SetSpecialOption(int SpecialOptionLevel)
-	{
-		switch (SpecialOptionLevel) 
-		{
-		case 0:
-		{
-			
-			break;
-		}
-		case 1:
-		{
-			
-			break;
-		}
-		case 2:
-		{
-			
-			break;
-		}
-		case 3:
-		{
-			
-			break;
-		}
-		case 4:
-		{
-			
-			break;
-		}
-		}
-	}
 	void ChooseToArmor()
 	{
-		
+		Item_load_info = new int[StageManager.GetInstance().m_stageData.treasureID.Length];
+		for(int i = 0; i < StageManager.GetInstance().m_stageData.treasureID.Length; i++)
+		{
+			Item_load_info[i] = Convert.ToInt32(StageManager.GetInstance().m_stageData.treasureID[i]);
+		}
+		int temp = UnityEngine.Random.Range (0, Item_load_info.Length);
+		ChooseItemId = Item_load_info [temp];
+		m_ItemData = m_ItemDataLoad.GetArmorData (ChooseItemId);
+		GetArmorInfo (m_ItemData);
+	}
+
+	void GetArmorInfo(armorData tempData)
+	{
+		m_item.name				= tempData.name;			
+		m_item.armorID			= tempData.armorID;		
+		m_item.armorType		= tempData.armorType;	
+		m_item.armorGrade		= tempData.armorGrade;		
+		m_item.armorHP			= tempData.armorHP;			
+		m_item.def				= tempData.def;			
+		m_item.mDef				= tempData.mDef;			
+		m_item.mAtk				= tempData.mAtk;			
+		m_item.critChance		= tempData.critChance;			
+		m_item.hpRegen			= tempData.hpRegen;			
+		m_item.potionup			= tempData.potionup;			
+		m_item.shield			= tempData.shield;			
+		m_item.critOnEnemy		= tempData.critOnEnemy;		
+		m_item.slow				= tempData.slow;			
+		m_item.thorns			= tempData.thorns;			
+		m_item.chargeAtk		= tempData.chargeAtk;
+		Debug.Log (m_item.armorType);
 	}
 }

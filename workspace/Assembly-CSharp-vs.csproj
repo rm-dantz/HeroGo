@@ -179,9 +179,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\Resources\data\obj\armorData.cs" />
-     <Compile Include="Assets\Resources\data\obj\monsterData.cs" />
-     <Compile Include="Assets\Resources\data\obj\stageData.cs" />
+     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\Game\BackGround.cs" />
      <Compile Include="Assets\Scripts\Game\Bullet.cs" />
      <Compile Include="Assets\Scripts\Game\ButtonManager.cs" />
@@ -197,23 +195,17 @@
      <Compile Include="Assets\Scripts\Game\amor_b_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_c_info.cs" />
      <Compile Include="Assets\Scripts\Game\amor_d_info.cs" />
-<<<<<<< HEAD
-     <Compile Include="Assets\Scripts\Game\data\CSVParser.cs" />
-     <Compile Include="Assets\Scripts\Game\data\armorDataLoad.cs" />
-     <Compile Include="Assets\Scripts\Game\data\monsterDataLoad.cs" />
-     <Compile Include="Assets\Scripts\Game\data\obj\armorData.cs" />
-     <Compile Include="Assets\Scripts\Game\data\obj\monsterData.cs" />
-     <Compile Include="Assets\Scripts\Game\data\obj\stageData.cs" />
-     <Compile Include="Assets\Scripts\Game\data\stageDataLoad.cs" />
-=======
->>>>>>> origin/master
      <Compile Include="Assets\Scripts\Game\player_control.cs" />
      <Compile Include="Assets\Scripts\Game\wand_drop.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
-     <Compile Include="Assets\Scripts\data\CSVParser.cs" />
-     <Compile Include="Assets\Scripts\data\armorDataLoad.cs" />
-     <Compile Include="Assets\Scripts\data\monsterDataLoad.cs" />
-     <Compile Include="Assets\Scripts\data\stageDataLoad.cs" />
+     <Compile Include="Assets\Scripts\data\dataFormat\armorData.cs" />
+     <Compile Include="Assets\Scripts\data\dataFormat\monsterData.cs" />
+     <Compile Include="Assets\Scripts\data\dataFormat\stageData.cs" />
+     <Compile Include="Assets\Scripts\data\obj\CSVParser.cs" />
+     <Compile Include="Assets\Scripts\data\obj\armorDataLoad.cs" />
+     <Compile Include="Assets\Scripts\data\obj\monsterDataLoad.cs" />
+     <Compile Include="Assets\Scripts\data\obj\stageDataLoad.cs" />
+     <Compile Include="Assets\Scripts\monsterGenerator.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.3.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

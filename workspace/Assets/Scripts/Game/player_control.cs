@@ -20,15 +20,11 @@ public  class  player_control  :  MonoBehaviour  {
 	//Bullet Creator
 	public GameObject m_bulletCreator;
 	//Player Abillity
-	float Attack_speed = 1;
 	float MaxHp = 0f;
 	float CurrentHp = 0f;
-	int MP = 10;
-	float MP_Recorvery = 1.0f;
 	int Damage = 1;
 	float Defence = 0.0f;
 	float MagicDefence = 0.0f;
-	float Jump_height = 1.0f;
 	//Weapon
 	Weapon wand = new Weapon();
 	int Weapon_Grade;
@@ -51,55 +47,79 @@ public  class  player_control  :  MonoBehaviour  {
 	//Item Info
 	public struct CAP
 	{
-		public string 	Item_Name;
-		public float 	HP;
-		public float 	Defence;
-		public float	MagicDefence;
-		public int 		Damage;
-		public int 		Cri;
-		public int 		HP_Regen;
-		public int 		Barrier;
-		public int 		Potion_Up;
-		public int 		Item_Type;
+		public string 		name;			
+		public int			armorID;		
+		public int			armorType;	
+		public int			armorGrade;		
+		public int			armorHP;			
+		public int			def;			
+		public int			mDef;			
+		public int			mAtk;			
+		public float		critChance;			
+		public float		hpRegen;			
+		public float		potionup;			
+		public int			shield;			
+		public int			critOnEnemy;			
+		public int			slow;			
+		public int			thorns;			
+		public int			chargeAtk;
 	}
 	public struct ROBE
 	{
-		public string 	Item_Name;
-		public float 	HP;
-		public float 	Defence;
-		public float	MagicDefence;
-		public int 		Damage;
-		public int 		Cri;
-		public int 		HP_Regen;
-		public int 		Barrier;
-		public int 		Potion_Up;
-		public int 		Item_Type;
+		public string 		name;			
+		public int			armorID;		
+		public int			armorType;	
+		public int			armorGrade;		
+		public int			armorHP;			
+		public int			def;			
+		public int			mDef;			
+		public int			mAtk;			
+		public float		critChance;			
+		public float		hpRegen;			
+		public float		potionup;			
+		public int			shield;			
+		public int			critOnEnemy;			
+		public int			slow;			
+		public int			thorns;			
+		public int			chargeAtk;
 	}
 	public struct SHOES
 	{
-		public string 	Item_Name;
-		public float 	HP;
-		public float 	Defence;
-		public float	MagicDefence;
-		public int 		Damage;
-		public int 		Cri;
-		public int 		HP_Regen;
-		public int 		Barrier;
-		public int 		Potion_Up;
-		public int 		Item_Type;
+		public string 		name;			
+		public int			armorID;		
+		public int			armorType;	
+		public int			armorGrade;		
+		public int			armorHP;			
+		public int			def;			
+		public int			mDef;			
+		public int			mAtk;			
+		public float		critChance;			
+		public float		hpRegen;			
+		public float		potionup;			
+		public int			shield;			
+		public int			critOnEnemy;			
+		public int			slow;			
+		public int			thorns;			
+		public int			chargeAtk;
 	}
 	public struct CLOACK
 	{
-		public string 	Item_Name;
-		public float 	HP;
-		public float 	Defence;
-		public float	MagicDefence;
-		public int 		Damage;
-		public int 		Cri;
-		public int 		HP_Regen;
-		public int 		Barrier;
-		public int 		Potion_Up;
-		public int 		Item_Type;
+		public string 		name;			
+		public int			armorID;		
+		public int			armorType;	
+		public int			armorGrade;		
+		public int			armorHP;			
+		public int			def;			
+		public int			mDef;			
+		public int			mAtk;			
+		public float		critChance;			
+		public float		hpRegen;			
+		public float		potionup;			
+		public int			shield;			
+		public int			critOnEnemy;			
+		public int			slow;			
+		public int			thorns;			
+		public int			chargeAtk;
 	}
 
 	public CAP current_cap;
@@ -263,8 +283,10 @@ public  class  player_control  :  MonoBehaviour  {
 		} 
 		if (coll.gameObject.tag == "GiftBox")
 		{
-			ItemType = coll.gameObject.GetComponent<DropItem>().Type;
-			NewItemType = coll.gameObject.GetComponent<DropItem>().Type;
+			ItemType = coll.gameObject.GetComponent<DropItem>().m_item.armorType;
+			//NewItemType = coll.gameObject.GetComponent<DropItem>().m_item.armorType;
+			Debug.Log ("ItemType : " + ItemType);
+			Debug.Log ("NewItemType : " + NewItemType);
 			NGUITools.SetActive(ChangeItemWindow.gameObject, true);
 			Time.timeScale = 0f;
 			NewDes.gameObject.GetComponent<NewItemDes>().DropItem = coll.gameObject;
@@ -275,7 +297,6 @@ public  class  player_control  :  MonoBehaviour  {
 
 		if (coll.gameObject.tag.Equals("Wand"))
 		{
-			Debug.Log("ddd");
 			wand.AccumWand(coll.gameObject.GetComponent<wand_drop>().currentElement);
 			Destroy(coll.gameObject);
 		}
@@ -328,53 +349,77 @@ public  class  player_control  :  MonoBehaviour  {
 	void ItemToSave()
 	{
 		//CAP
-		current_cap.Item_Name = m_cap.Item_Name;
-		current_cap.HP = m_cap.HP;
-		current_cap.Defence = m_cap.Defence;
-		current_cap.MagicDefence = m_cap.MagicDefence;
-		current_cap.Damage = m_cap.Damage;
-		current_cap.Cri = m_cap.Cri;
-		current_cap.HP_Regen = m_cap.HP_Regen;
-		current_cap.Barrier = m_cap.Barrier;
-		current_cap.Potion_Up = m_cap.Potion_Up;
-		current_cap.Item_Type = m_cap.Item_Type;
+		current_cap.name 			= m_cap.name;			
+		current_cap.armorID 		= m_cap.armorID;		
+		current_cap.armorType 		= m_cap.armorType;	
+		current_cap.armorGrade 		= m_cap.armorGrade;		
+		current_cap.armorHP 		= m_cap.armorHP;			
+		current_cap.def 			= m_cap.def;			
+		current_cap.mDef 			= m_cap.mDef;			
+		current_cap.mAtk 			= m_cap.mAtk;			
+		current_cap.critChance 		= m_cap.critChance;			
+		current_cap.hpRegen 		= m_cap.hpRegen;			
+		current_cap.potionup 		= m_cap.potionup;			
+		current_cap.shield 			= m_cap.shield;			
+		current_cap.critOnEnemy 	= m_cap.critOnEnemy;		
+		current_cap.slow 			= m_cap.slow;			
+		current_cap.thorns			= m_cap.thorns;			
+		current_cap.chargeAtk 		= m_cap.chargeAtk;			
 		//ROBE
-		current_robe.Item_Name = m_robe.Item_Name;
-		current_robe.HP = m_robe.HP;
-		current_robe.Defence = m_robe.Defence;
-		current_robe.MagicDefence = m_robe.MagicDefence;
-		current_robe.Damage = m_robe.Damage;
-		current_robe.Cri = m_robe.Cri;
-		current_robe.HP_Regen = m_robe.HP_Regen;
-		current_robe.Barrier = m_robe.Barrier;
-		current_robe.Potion_Up = m_robe.Potion_Up;
-		current_robe.Item_Type = m_robe.Item_Type;
+		current_robe.name 			= m_robe.name;			
+		current_robe.armorID 		= m_robe.armorID;		
+		current_robe.armorType 		= m_robe.armorType;	
+		current_robe.armorGrade 	= m_robe.armorGrade;		
+		current_robe.armorHP 		= m_robe.armorHP;			
+		current_robe.def 			= m_robe.def;			
+		current_robe.mDef 			= m_robe.mDef;			
+		current_robe.mAtk 			= m_robe.mAtk;			
+		current_robe.critChance 	= m_robe.critChance;			
+		current_robe.hpRegen 		= m_robe.hpRegen;			
+		current_robe.potionup 		= m_robe.potionup;			
+		current_robe.shield 		= m_robe.shield;			
+		current_robe.critOnEnemy 	= m_robe.critOnEnemy;		
+		current_robe.slow 			= m_robe.slow;			
+		current_robe.thorns			= m_robe.thorns;			
+		current_robe.chargeAtk 		= m_robe.chargeAtk;			
 		//SHOES
-		current_shoes.Item_Name = m_shoes.Item_Name;
-		current_shoes.HP = m_shoes.HP;
-		current_shoes.Defence = m_shoes.Defence;
-		current_shoes.MagicDefence = m_shoes.MagicDefence;
-		current_shoes.Damage = m_shoes.Damage;
-		current_shoes.Cri = m_shoes.Cri;
-		current_shoes.HP_Regen = m_shoes.HP_Regen;
-		current_shoes.Barrier = m_shoes.Barrier;
-		current_shoes.Potion_Up = m_shoes.Potion_Up;
-		current_shoes.Item_Type = m_shoes.Item_Type;
+		current_shoes.name 			= m_shoes.name;			
+		current_shoes.armorID 		= m_shoes.armorID;		
+		current_shoes.armorType 	= m_shoes.armorType;	
+		current_shoes.armorGrade 	= m_shoes.armorGrade;		
+		current_shoes.armorHP 		= m_shoes.armorHP;			
+		current_shoes.def 			= m_shoes.def;			
+		current_shoes.mDef 			= m_shoes.mDef;			
+		current_shoes.mAtk 			= m_shoes.mAtk;			
+		current_shoes.critChance 	= m_shoes.critChance;			
+		current_shoes.hpRegen 		= m_shoes.hpRegen;			
+		current_shoes.potionup 		= m_shoes.potionup;			
+		current_shoes.shield 		= m_shoes.shield;			
+		current_shoes.critOnEnemy 	= m_shoes.critOnEnemy;		
+		current_shoes.slow 			= m_shoes.slow;			
+		current_shoes.thorns		= m_shoes.thorns;			
+		current_shoes.chargeAtk 	= m_shoes.chargeAtk;	
 		//CLOACK
-		current_cloack.Item_Name = m_cloack.Item_Name;
-		current_cloack.HP = m_cloack.HP;
-		current_cloack.Defence = m_cloack.Defence;
-		current_cloack.MagicDefence = m_cloack.MagicDefence;
-		current_cloack.Damage = m_cloack.Damage;
-		current_cloack.Cri = m_cloack.Cri;
-		current_cloack.HP_Regen = m_cloack.HP_Regen;
-		current_cloack.Barrier = m_cloack.Barrier;
-		current_cloack.Potion_Up = m_cloack.Potion_Up;
-		current_cloack.Item_Type = m_cloack.Item_Type;
+		current_cloack.name 		= m_cloack.name;			
+		current_cloack.armorID 		= m_cloack.armorID;		
+		current_cloack.armorType 	= m_cloack.armorType;	
+		current_cloack.armorGrade 	= m_cloack.armorGrade;		
+		current_cloack.armorHP 		= m_cloack.armorHP;			
+		current_cloack.def 			= m_cloack.def;			
+		current_cloack.mDef 		= m_cloack.mDef;			
+		current_cloack.mAtk 		= m_cloack.mAtk;			
+		current_cloack.critChance 	= m_cloack.critChance;			
+		current_cloack.hpRegen 		= m_cloack.hpRegen;			
+		current_cloack.potionup 	= m_cloack.potionup;			
+		current_cloack.shield 		= m_cloack.shield;			
+		current_cloack.critOnEnemy 	= m_cloack.critOnEnemy;		
+		current_cloack.slow 		= m_cloack.slow;			
+		current_cloack.thorns		= m_cloack.thorns;			
+		current_cloack.chargeAtk 	= m_cloack.chargeAtk;
 
-		MaxHp = m_cap.HP + m_robe.HP + m_shoes.HP + m_cloack.HP;
-		Defence = m_cap.Defence + m_robe.Defence + m_shoes.Defence + m_cloack.Defence;
-		MagicDefence = m_cap.MagicDefence + m_robe.MagicDefence + m_shoes.MagicDefence + m_cloack.MagicDefence;
+		MaxHp = m_cap.armorHP + m_robe.armorHP + m_shoes.armorHP + m_cloack.armorHP;
+		Defence = m_cap.def + m_robe.def + m_shoes.def + m_cloack.def;
+		MagicDefence = m_cap.mDef + m_robe.mDef + m_shoes.mDef + m_cloack.mDef;
 
 		Debug.Log 
 			(

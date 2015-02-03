@@ -8,55 +8,16 @@ public class NewItemDes : MonoBehaviour {
 
 	public void Init()
 	{
-		if(GetItem.gameObject.GetComponent<player_control>().NewItemType == 1)
-		{
-			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Item_Name + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP  + " \n " +
-					"Defence : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Defence  + " \n " +
-					"Damage : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Damage  + " \n " +
-					"Cri : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Cri  + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP_Regen  + " \n " +
-					"Barrier : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Barrier  + " \n " +
-					"Potion_up : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Potion_Up;
+		gameObject.GetComponent<UILabel> ().text = 
+			"Name : " + DropItem.gameObject.GetComponent<DropItem>().m_item.name + " \n " +
+				"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.armorHP  + " \n " +
+				"Defence : " + DropItem.gameObject.GetComponent<DropItem>().m_item.def  + " \n " +
+				"Damage : " + DropItem.gameObject.GetComponent<DropItem>().m_item.mAtk  + " \n " +
+				"Cri : " + DropItem.gameObject.GetComponent<DropItem>().m_item.critChance  + " \n " +
+				"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.hpRegen  + " \n " +
+				"Barrier : " + DropItem.gameObject.GetComponent<DropItem>().m_item.shield  + " \n " +
+				"Potion_up : " + DropItem.gameObject.GetComponent<DropItem>().m_item.potionup;
 
-		}
-		if(GetItem.gameObject.GetComponent<player_control>().NewItemType == 2)
-		{
-			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Item_Name + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP  + " \n " +
-					"Defence : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Defence  + " \n " +
-					"Damage : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Damage  + " \n " +
-					"Cri : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Cri  + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP_Regen  + " \n " +
-					"Barrier : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Barrier  + " \n " +
-					"Potion_up : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Potion_Up;
-		}
-		if(GetItem.gameObject.GetComponent<player_control>().NewItemType == 3)
-		{
-			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Item_Name + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP  + " \n " +
-					"Defence : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Defence  + " \n " +
-					"Damage : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Damage  + " \n " +
-					"Cri : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Cri  + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP_Regen  + " \n " +
-					"Barrier : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Barrier  + " \n " +
-					"Potion_up : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Potion_Up;
-		}
-		if(GetItem.gameObject.GetComponent<player_control>().NewItemType == 4)
-		{
-			gameObject.GetComponent<UILabel> ().text = 
-				"Name : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Item_Name + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP  + " \n " +
-					"Defence : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Defence  + " \n " +
-					"Damage : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Damage  + " \n " +
-					"Cri : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Cri  + " \n " +
-					"HP : " + DropItem.gameObject.GetComponent<DropItem>().m_item.HP_Regen  + " \n " +
-					"Barrier : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Barrier  + " \n " +
-					"Potion_up : " + DropItem.gameObject.GetComponent<DropItem>().m_item.Potion_Up;
-		}
 	}
 	// Update is called once per frame
 	void Update() 

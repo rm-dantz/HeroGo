@@ -16,7 +16,6 @@ public class VitalBar : MonoBehaviour {
 			return;
 		}
 		instance = this;
-		Debug.Log ("Awake");
 	}
 
 	public void UpdateDisplay(float MaxHP, float CurrentHP)
