@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class monsterData  {
+public class monsterData   {
 
 	public monsterData(){
 	}
@@ -15,7 +15,7 @@ public class monsterData  {
 	public int magicAtk;
 	public float moveSpd;
 	public float atkSpd;
-	public int shotSize;
+	public float shotSize;
 	public float shotSpd;
 	public int flightPattern;
 	public int gold;

@@ -39,7 +39,7 @@ public class monsterDataLoad : CSVParser {
 		tempData.magicAtk 		    = Convert.ToInt32( inputData[count++] );
 		tempData.moveSpd 		    = (float)Convert.ToDouble( inputData [count++] ); 
 		tempData.atkSpd 			= (float)Convert.ToDouble( inputData [count++] );
-		tempData.shotSize 		    = Convert.ToInt32( inputData[count++] );
+		tempData.shotSize 		    = (float)Convert.ToDouble( inputData [count++] );
 		tempData.shotSpd 		    = (float)Convert.ToDouble (inputData [count++] );
 		tempData.flightPattern 		= Convert.ToInt32( inputData[count++] );
 		tempData.gold 				= Convert.ToInt32( inputData[count++] );
